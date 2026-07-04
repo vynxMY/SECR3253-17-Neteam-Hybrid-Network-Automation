@@ -1,6 +1,6 @@
 """
-Member 1 - Nik Danish Adam
-Task:NETCONF Configuration Module
+Member 1 - Nik Danish Adam Bin Fairus
+Task: NETCONF Configuration Module
 
 Responsibilities:
 1. IP Configuration
@@ -97,3 +97,90 @@ def build_description_payload(interface_name, description):
       </native>
     </config>
     """
+
+
+# =====================================================
+# Task 5 - Configure Interface Description
+# =====================================================
+
+def configure_interface_description(interface_name, description):
+
+    payload = build_description_payload(
+        interface_name,
+        description
+    )
+
+    try:
+
+        with manager.connect(**DEVICE) as m:
+
+            m.edit_config(
+                target="running",
+                config=payload
+            )
+
+            print(
+                f"\n[SUCCESS] Description configured on GigabitEthernet{interface_name}"
+            )
+
+    except Exception as e:
+
+        print("\n[ERROR]")
+        print(e)
+
+
+# =====================================================
+# Task 6 - Member 1 Menu
+# =====================================================
+
+def run_member1_menu():
+
+    while True:
+
+        print("\n========================================")
+        print(" Member 1 - NETCONF Configuration ")
+        print("========================================")
+        print("1. Configure IP Address")
+        print("2. Configure Interface Description")
+        print("3. Exit")
+
+        choice = input("\nSelect option: ")
+
+        if choice == "1":
+
+            interface = input("Interface number (Example: 2): ")
+            ip = input("IP Address: ")
+            mask = input("Subnet Mask: ")
+
+            configure_ip_address(
+                interface,
+                ip,
+                mask
+            )
+
+        elif choice == "2":
+
+            interface = input("Interface number (Example: 2): ")
+            description = input("Interface Description: ")
+
+            configure_interface_description(
+                interface,
+                description
+            )
+
+        elif choice == "3":
+
+            print("\nExiting Member 1 Module...")
+            break
+
+        else:
+
+            print("\nInvalid option.")
+
+
+# =====================================================
+# Task 7 - Main Program
+# =====================================================
+
+if __name__ == "__main__":
+    run_member1_menu()
