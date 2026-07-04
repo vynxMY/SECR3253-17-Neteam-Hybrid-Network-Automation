@@ -16,6 +16,9 @@ network engineering and system administration tasks:
 - Generating a session report summarizing actions taken
 
 ## Project Structure
+
+```
+.
 ├── main.py                  # Entry point / main menu (Member 5)
 ├── netconf_config.py        # Shared NETCONF device connection settings
 ├── requirements.txt
@@ -30,7 +33,8 @@ network engineering and system administration tasks:
 ├── member4/                 # Linux Monitoring: hostname, date/time, CPU,
 │   └── linux_monitor.py     # memory, disk, users, processes
 └── member5/                 # Integration, Docker, Report Generator
-└── report_generator.py
+    └── report_generator.py
+```
 
 ## Requirements
 
