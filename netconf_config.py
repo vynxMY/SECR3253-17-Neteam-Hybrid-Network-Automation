@@ -1,8 +1,9 @@
 DEVICE = {
-    "host": "10.10.20.48",
+    "host": "192.168.56.101",
     "port": 830,
-    "username": "developer",
-    "password": "C1sco12345",
+    "username": "cisco",
+    "password": "cisco123!",
     "hostkey_verify": False,
     "device_params": {"name": "csr"},
 }
+

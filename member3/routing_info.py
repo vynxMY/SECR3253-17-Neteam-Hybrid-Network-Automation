@@ -1,3 +1,5 @@
+
+
 from ncclient import manager
 import xmltodict
 import sys
@@ -16,7 +18,9 @@ def build_static_route_payload(prefix, mask, next_hop):
             <ip-route-interface-forwarding-list>
               <prefix>{prefix}</prefix>
               <mask>{mask}</mask>
-              <forwarding-address>{next_hop}</forwarding-address>
+              <fwd-list>
+                <fwd>{next_hop}</fwd>
+              </fwd-list>
             </ip-route-interface-forwarding-list>
           </route>
         </ip>
