@@ -16,7 +16,6 @@ network engineering and system administration tasks:
 - Generating a session report summarizing actions taken
 
 ## Project Structure
-.
 ├── main.py                  # Entry point / main menu (Member 5)
 ├── netconf_config.py        # Shared NETCONF device connection settings
 ├── requirements.txt
